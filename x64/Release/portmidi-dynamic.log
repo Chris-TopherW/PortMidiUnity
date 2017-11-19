@@ -1,0 +1,30 @@
+﻿  pmutil.c
+  portmidi.c
+..\pm_common\portmidi.c(305): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(346): note: see declaration of 'strncpy'
+  pmwin.c
+  pmwinmm.c
+..\pm_win\pmwinmm.c(184): warning C4312: 'type cast': conversion from 'UINT' to 'void *' of greater size
+..\pm_win\pmwinmm.c(202): warning C4312: 'type cast': conversion from 'UINT' to 'void *' of greater size
+..\pm_win\pmwinmm.c(224): warning C4312: 'type cast': conversion from 'UINT' to 'void *' of greater size
+..\pm_win\pmwinmm.c(240): warning C4312: 'type cast': conversion from 'UINT' to 'void *' of greater size
+..\pm_win\pmwinmm.c(266): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+..\pm_win\pmwinmm.c(263): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(346): note: see declaration of 'strncpy'
+..\pm_win\pmwinmm.c(551): warning C4311: 'type cast': pointer truncation from 'void *' to 'DWORD'
+..\pm_win\pmwinmm.c(675): warning C4312: 'type cast': conversion from 'DWORD' to 'PmInternal *' of greater size
+..\pm_win\pmwinmm.c(720): warning C4312: 'type cast': conversion from 'DWORD' to 'MIDIHDR *' of greater size
+..\pm_win\pmwinmm.c(831): warning C4311: 'type cast': pointer truncation from 'void *' to 'DWORD'
+..\pm_win\pmwinmm.c(1333): warning C4312: 'type cast': conversion from 'DWORD' to 'PmInternal *' of greater size
+..\pm_win\pmwinmm.c(1335): warning C4312: 'type cast': conversion from 'DWORD' to 'LPMIDIHDR' of greater size
+  ptwinmm.c
+  PortMidiUnity.c
+PortMidiUnity.c(12): warning C4047: '<': 'int' differs in levels of indirection from 'int (__cdecl *)(void)'
+PortMidiUnity.c(50): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Generating Code...
+c:\audio\portmidi\pm_dylib\portmidiunity.c(58): warning C4172: returning address of local variable or temporary: name
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1198,5): warning MSB8012: TargetPath(C:\audio\portmidi\x64\Release\portmidi-dynamic.dll) does not match the Linker's OutputFile property value (C:\audio\portmidi\Release\portmidi.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1200,5): warning MSB8012: TargetName(portmidi-dynamic) does not match the Linker's OutputFile property value (portmidi). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+LINK : warning LNK4044: unrecognized option '//machine:I386'; ignored
+     Creating library ..\Release\portmidi.lib and object ..\Release\portmidi.exp
+  portmidi-dynamic.vcxproj -> C:\audio\portmidi\x64\Release\portmidi-dynamic.dll
