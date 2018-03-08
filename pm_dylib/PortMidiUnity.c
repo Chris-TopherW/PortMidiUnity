@@ -1,10 +1,20 @@
 #include "PortMidiUnity.h"
 
+#define true 1;
+#define false 0;
+
+#ifndef bool
+typedef _Bool bool;
+#endif
+
 int32_t latency = 1;
 PmStream * midi;
-int chord[] = { 60, 67, 76, 83, 90 };
+PmEvent midiOutputBuf[256];
+int buffWritePos = 0;
+int buffReadPos = 0;
 PmTimestamp timestamp;
 int deviceNum = -1;
+bool ready = false;
 
 int main_test_output() {
 	TIME_START;
@@ -29,33 +39,39 @@ int main_test_output() {
 		(latency == 0 ? NULL : TIME_PROC),
 		(latency == 0 ? NULL : TIME_INFO),
 		latency);
+	ready = false;
 	return deviceNum;
 }
 
-void playNote(int mess1, int mess2, int delay, int length)
+void midiEvent(int status, int mess1, int mess2, int delay)
 {
-	PmEvent buffer2[2];
+	PmEvent buffer2[1];
 	timestamp = TIME_PROC(TIME_INFO);
 	buffer2[0].timestamp = timestamp + delay;
-	buffer2[0].message = Pm_Message(0x90, mess1, mess2);
-	buffer2[1].timestamp = timestamp + delay + length;
-	buffer2[1].message = Pm_Message(0x80, mess1, mess2);
-	Pm_Write(midi, buffer2, 2);
+	buffer2[0].message = Pm_Message(status, mess1, mess2);
+	Pm_Write(midi, buffer2, 1);
 }
 
-char* printOutputDevices()
+int getNumDevices()
 {
-	//char allDeviceInfo[100];
-	char name[10];
-	strcpy(name, "Name");
-	
-	//for (int i = 0; i < Pm_CountDevices(); i++) {
-	//	char* deflt;
-	//	const PmDeviceInfo* info = Pm_GetDeviceInfo(i);
-	//	deflt = info->name;
-	//	strcat(allDeviceInfo, deflt);
-	//}
-	return name;
+	if (ready)
+		return Pm_CountDevices;
+	else
+		return 0;
+}
+
+char* printOutputDevice(int index)
+{
+
+	const PmDeviceInfo* info = Pm_GetDeviceInfo(index);
+	if (info == NULL)
+	{
+		return "Error: no device info";
+	}
+	else 
+	{
+		return info->name;
+	}
 }
 
 void shutdown()
