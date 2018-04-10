@@ -19,11 +19,12 @@
 ..\pm_win\pmwinmm.c(1335): warning C4312: 'type cast': conversion from 'DWORD' to 'LPMIDIHDR' of greater size
   ptwinmm.c
   PortMidiUnity.c
-PortMidiUnity.c(41): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+PortMidiUnity.c(22): warning C4047: '<': 'int' differs in levels of indirection from 'int (__cdecl *)(void)'
+PortMidiUnity.c(50): warning C4047: 'return': 'int' differs in levels of indirection from 'int (__cdecl *)(void)'
+PortMidiUnity.c(65): warning C4090: 'return': different 'const' qualifiers
   Generating Code...
-c:\audio\portmidi\pm_dylib\portmidiunity.c(49): warning C4172: returning address of local variable or temporary: name
-C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1198,5): warning MSB8012: TargetPath(C:\audio\portmidi\x64\Release\portmidi-dynamic.dll) does not match the Linker's OutputFile property value (C:\audio\portmidi\Release\portmidi.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1198,5): warning MSB8012: TargetPath(C:\Users\chriswratt\Documents\UnityProjects\PortMidiUnity\x64\Release\portmidi-dynamic.dll) does not match the Linker's OutputFile property value (C:\Users\chriswratt\Documents\UnityProjects\PortMidiUnity\Release\portmidi.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
 C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1200,5): warning MSB8012: TargetName(portmidi-dynamic) does not match the Linker's OutputFile property value (portmidi). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
 LINK : warning LNK4044: unrecognized option '//machine:I386'; ignored
      Creating library ..\Release\portmidi.lib and object ..\Release\portmidi.exp
-  portmidi-dynamic.vcxproj -> C:\audio\portmidi\x64\Release\portmidi-dynamic.dll
+  portmidi-dynamic.vcxproj -> C:\Users\chriswratt\Documents\UnityProjects\PortMidiUnity\x64\Release\portmidi-dynamic.dll

@@ -14,7 +14,7 @@
 
 #define STRING_MAX 80 /* used for console input */
 
-PMEXPORT int main_test_output();
+PMEXPORT int main_test_output(int p_deviceNum);
 PMEXPORT void midiEvent(int status, int mess1, int mess2, int delay);
 PMEXPORT char* printOutputDevice(int index);
 PMEXPORT int getNumDevices();

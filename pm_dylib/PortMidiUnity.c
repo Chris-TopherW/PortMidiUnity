@@ -16,31 +16,24 @@ PmTimestamp timestamp;
 int deviceNum = -1;
 bool ready = false;
 
-int main_test_output() {
+int main_test_output(int p_index) {
 	TIME_START;
 
+	//I have 0 idea why this makes the software work.... errrrg
 	for (int i = 0; i < Pm_CountDevices; i++)
 	{
 		const PmDeviceInfo* info = Pm_GetDeviceInfo(i);
-		if(info == NULL)
-		{
-			;
-		}
-		else if (strcmp(info->name, "loopMIDI Port") == 0)
-		{
-			deviceNum = i;
-		}
 	}
 
 	Pm_OpenOutput(&midi,
-		deviceNum,
+		p_index,
 		DRIVER_INFO,
 		OUTPUT_BUFFER_SIZE,
 		(latency == 0 ? NULL : TIME_PROC),
 		(latency == 0 ? NULL : TIME_INFO),
 		latency);
 	ready = false;
-	return deviceNum;
+	return p_index;
 }
 
 void midiEvent(int status, int mess1, int mess2, int delay)
